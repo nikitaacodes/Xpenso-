@@ -7,6 +7,8 @@ type Item = {
 };
 
 type FinanceState = {
+  balance: Item[];
+  savings: Item[];
   expenses: Item[];
   income: Item[];
   investments: Item[];
@@ -15,6 +17,8 @@ type FinanceState = {
 const financeSlice = createSlice({
   name: "finance",
   initialState: {
+    balance: [] as Item[],
+    savings: [] as Item[],
     expenses: [] as Item[],
     income: [] as Item[],
     investments: [] as Item[],
@@ -26,8 +30,17 @@ const financeSlice = createSlice({
     setIncome: (state, action: PayloadAction<Item[]>) => {
       state.income = action.payload;
     },
+      setSavings: (state, action: PayloadAction<Item[]>) => {
+      state.income = action.payload;
+    },
+    setInvestments: (state, action: PayloadAction<Item[]>) => {
+      state.income = action.payload;
+    },
+      setBalance: (state, action: PayloadAction<Item[]>) => {
+      state.income = action.payload;
+    },
   },
 });
 
-export const { setExpenses, setIncome } = financeSlice.actions;
+export const { setExpenses, setIncome, setBalance, setInvestments, setSavings } = financeSlice.actions;
 export default financeSlice.reducer;
