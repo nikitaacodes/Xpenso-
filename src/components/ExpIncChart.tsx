@@ -7,12 +7,9 @@ import {
   Chart as ChartJS,
   Legend,
   LinearScale,
-  scales,
-  Ticks,
   Title,
   Tooltip,
 } from "chart.js";
-import { title } from "process";
 import { Bar } from "react-chartjs-2";
 import { useSelector } from "react-redux";
 
@@ -28,60 +25,67 @@ ChartJS.register(
 export default function ExpIncChart() {
   const expenses = useSelector((state: RootState) => state.finance.expenses);
   const income = useSelector((state: RootState) => state.finance.income);
+
+  const totalExpenses = expenses.reduce((acc, item) => acc + item.amount, 0);
+  const totalIncome = income.reduce((acc, item) => acc + item.amount, 0);
+
   const data = {
-    labels: ["Income", "Expense"],
+    labels: ["Finance"], 
     datasets: [
       {
-        label: "Amount($)",
-        data: [
-          expenses.reduce((acc, item) => acc + item.amount, 0),
-          income.reduce((acc, item) => acc + item.amount, 0),
-        ],
-        backgroundColor: ["rgba(255,99,132,0.5)", "rgba(75,192,192,0.5)"],
-        borderWidth: 1,
+        label: "Income ($)",
+        data: [totalIncome],
+        backgroundColor: "rgba(75,192,192,0.5)",
+      },
+      {
+        label: "Expenses ($)",
+        data: [totalExpenses],
+        backgroundColor: "rgba(255,99,132,0.5)",
       },
     ],
   };
+
   const options = {
     responsive: true,
     plugins: {
       legend: { position: "top" as const },
       title: {
         display: true,
-        text: "expenses vs income",
+        text: "Income vs Expenses",
         font: { size: 17 },
       },
     },
     scales: {
       x: {
+        stacked: true, 
         title: {
           display: true,
-          text: "categories",
+          text: "Category",
           color: "black",
         },
-        Ticks: {
+        ticks: {
           color: "black",
           font: { size: 13 },
         },
-        categoryPercentage: 0.7,
-        barPercentage: 0.9,
       },
       y: {
+        stacked: true, 
         beginAtZero: true,
         title: {
           display: true,
           text: "Amount ($)",
           font: { size: 15 },
         },
-        Ticks: {
+        ticks: {
           stepSize: 50,
           color: "black",
         },
         grid: {
-          color: "rgba (200,200,200,0.3)",
+          color: "rgba(200,200,200,0.3)",
         },
       },
     },
   };
+
   return <Bar data={data} options={options} />;
 }

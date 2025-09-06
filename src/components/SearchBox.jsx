@@ -12,13 +12,13 @@ export default function SeachBox() {
 
   return (
     <div>
-      <form onSubmit={handleSearch} className="flex items-center">
+      <form onSubmit={handleSearch} className="flex items-center text-black">
         <input
           type="text"
           value={text}
           placeholder="Search"
           onChange={(e) => setText(e.target.value)}
-          className="border border-gray-300 rounded-md w-[400px] px-3 py-1 bg-gray-100 focus:outline-none"
+          className="border border-gray-300 rounded-md w-[400px] px-3 py-1 text-black bg-gray-100 focus:outline-none"
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();

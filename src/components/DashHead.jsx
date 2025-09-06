@@ -24,8 +24,8 @@ export default function DashHead() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col ">
-      <div className="text-xl font-bold text-black-800 flex flex-row justify-between my-2">
+    <div className="w-full flex flex-col mx-4 ">
+      <div className="text-xl font-bold text-black flex flex-row justify-between my-2">
         {" "}
         <div>
           Welcome back, Santru !
@@ -44,7 +44,7 @@ export default function DashHead() {
           </Link>
         </div>
       </div>
-      <div className="flex flex-row gap-4 my-7">
+      <div className="flex flex-row gap-4 my-7 text-black">
         <div className="w-[200px] pr-4 pl-2 py-1 border-2 bg-gray-50 border-gray-400 rounded-sm">
           <p className="text-gray-600 font-medium"> Total savings</p>
           <p className="font-bold text-[22px] text-shadow-gray-400 text-shadow-[1px_1px_3px]">
