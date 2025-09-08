@@ -1,15 +1,15 @@
 "use client";
-
+import DashboardIcon from "@/app/Dashboard/DashboardIcon";
 import Link from "next/link";
-
 export default function SideBar() {
   return (
     <div className="w-[180px] flex flex-col h-screen bg-white ">
       <Link
         href={"/dashboard"}
-        className="font-medium px-4 py-2 text-black hover:text-indigo-800 hover:bg-indigo-200 rounded-lg "
+        className=" flex flex-row font-medium px-4 py-2 text-black hover:text-indigo-800 hover:bg-indigo-200 rounded-lg "
       >
         {" "}
+        <DashboardIcon className="w-5 h-5" />
         Dashboard
       </Link>
       <Link

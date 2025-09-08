@@ -10,7 +10,7 @@ export default function ClientWrapper() {
   return (
     <Provider store={store}>
       <div className="w-full px-4 py-1 bg-gray-200  ">
-        <Navbar variant="dashboard" />
+        <Navbar />
 
         <div className="flex flex-row">
           <SideBar />
