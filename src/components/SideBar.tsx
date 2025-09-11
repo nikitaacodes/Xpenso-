@@ -1,5 +1,9 @@
 "use client";
 import DashboardIcon from "@/app/Dashboard/DashboardIcon";
+import InvestmentIcon from "@/app/Investment/InvestmentIcon";
+import InvoiceIcon from "@/app/Invoice/InvoiceIcon";
+import MyWalletIcon from "@/app/Mywallet/MyWalletIcon";
+import SalesIcon from "@/app/Sales/SalesIcon";
 import Link from "next/link";
 export default function SideBar() {
   return (
@@ -24,6 +28,7 @@ export default function SideBar() {
         className="font-medium px-4 py-2 text-black hover:text-indigo-800 hover:bg-indigo-200 rounded-lg "
       >
         {" "}
+        <SalesIcon />
         Sales{" "}
       </Link>
       <Link
@@ -31,6 +36,7 @@ export default function SideBar() {
         className="font-medium px-4 py-2 text-black hover:text-indigo-800 hover:bg-indigo-200 rounded-lg "
       >
         {" "}
+        <InvoiceIcon />
         Invoice{" "}
       </Link>
       <Link
@@ -52,12 +58,14 @@ export default function SideBar() {
         className="font-medium px-4 py-2 text-black hover:text-indigo-800 hover:bg-indigo-200 rounded-lg "
       >
         {" "}
+        <InvestmentIcon />
         Investment{" "}
       </Link>
       <Link
         href={"/mywallet"}
         className="font-medium px-4 py-2 text-black hover:text-indigo-800 hover:bg-indigo-200 rounded-lg "
       >
+        <MyWalletIcon />
         My Wallet{" "}
       </Link>
     </div>
