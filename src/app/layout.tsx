@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Dashboard from "./Dashboard/page";
+import Dashboard from "./dashboard/page";
 
 export const metadata: Metadata = {
   title: "Xpenso",
@@ -15,10 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Dashboard />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

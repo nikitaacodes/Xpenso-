@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 
-export default function SeachBox() {
-  const [text, setText] = useState("");
+export default function SearchBox() {
+  const [text, setText] = useState<string>("");
 
-  const handleSearch = (e) => {
+  const handleSearch = (
+    e: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLInputElement>
+  ) => {
     e.preventDefault();
     console.log("searching for", text);
   };
@@ -17,9 +19,11 @@ export default function SeachBox() {
           type="text"
           value={text}
           placeholder="Search"
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setText(e.target.value)
+          }
           className="border border-gray-300 rounded-md w-[400px] px-3 py-1 text-black bg-gray-100 focus:outline-none"
-          onKeyDown={(e) => {
+          onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
             if (e.key === "Enter") {
               e.preventDefault();
               handleSearch(e);

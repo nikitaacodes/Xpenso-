@@ -1,6 +1,6 @@
 export default function InvestmentIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-   <svg fill="#000000" width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="8.192">
+   <svg fill="#000000" width="30px" height="30px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="8.192">
 
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 

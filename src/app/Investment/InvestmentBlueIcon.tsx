@@ -4,8 +4,8 @@ export default function InvestmentBlueIcon(
   return (
     <svg
       fill="#372aac"
-      width="800px"
-      height="800px"
+      width="30px"
+      height="30px"
       viewBox="0 0 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
       stroke="#372aac"
